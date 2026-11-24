@@ -129,5 +129,6 @@ MAILERS = {
     },
 }
 AUTH_USER_MODEL='accounts.CustomUser'#it specifies which user model the project should use insted of default User model
-LOGIN_REDIRECT_URL="home"#after successfull login it redirect to home
-LOGOUT_REDIRECT_URL = "login"
+LOGIN_REDIRECT_URL="home"#Where users go after successful login
+LOGIN_URL='login' #Where unauthenticated users are redirected
+LOGOUT_REDIRECT_URL = 'login'	#Where users go after logout
