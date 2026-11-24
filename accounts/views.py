@@ -11,7 +11,9 @@ def register(request):
            user.role="patient"
            user.save()   
 
-           return redirect("register")
+           return redirect("login")
     else:
         form=Registration()
     return render(request,'accounts/register.html',{'form':form})       
+def home(request):
+   return render(request,'accounts/home.html')
