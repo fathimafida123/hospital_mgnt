@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Doctor Appointments</title>
+</head>
+<body>
+
+    <h2>My Appointments</h2>
+
+    {% for appointment in appointments %}
+
+        <div>
+            <h3>Patient: {{ appointment.patient }}</h3>
+
+            <p>Date: {{ appointment.appointment_date }}</p>
+
+            <p>Time: {{ appointment.appointment_time }}</p>
+
+            <p>Reason: {{ appointment.reason }}</p>
+
+            <p>Status: {{ appointment.status }}</p>
+        </div>
+
+        <hr>
+
+    {% empty %}
+
+        <p>No appointments available.</p>
+
+    {% endfor %}
+
+</body>
+</html>

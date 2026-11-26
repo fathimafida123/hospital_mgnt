@@ -9,5 +9,11 @@ urlpatterns=[
     ),name="login"),
     path("logout/",auth_views.LogoutView.as_view(),
     name="logout"),
-    path("home/",views.home,name="home")
+    path("home/",views.home,name="home"),
+    path(
+    "patient-dashboard/",
+    views.patient_dashboard,
+    name="patient_dashboard"
+),
+path("doctor-dashboard/",views.doctor_dashboard,name="doctor_dashboard"),
 ]

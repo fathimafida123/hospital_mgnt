@@ -1,0 +1,12 @@
+<h2>Doctor Dashboard</h2>
+
+<a href="{% url 'doctor_appointments' %}">
+    View My Appointments
+</a>
+
+<br><br>
+
+<form method="POST" action="{% url 'logout' %}">
+    {% csrf_token %}
+    <button type="submit">Logout</button>
+</form>

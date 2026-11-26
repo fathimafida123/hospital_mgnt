@@ -17,4 +17,16 @@ def register(request):
     return render(request,'accounts/register.html',{'form':form}) 
 @login_required      
 def home(request):
-   return render(request,'accounts/home.html')
+
+    if request.user.role=='admin':
+        return redirect('admin_dashboard')
+    elif request.user.role=='doctor':
+        return redirect('doctor_dashboard')
+    elif request.user.role == 'patient':
+        return redirect('patient_dashboard')
+@login_required
+def patient_dashboard(request):
+    return render(request,'accounts/patient_dashboard.html')
+@login_required
+def doctor_dashboard(request):
+    return render(request,'accounts/doctor_dashboard.html')
